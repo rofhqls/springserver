@@ -38,7 +38,7 @@ public class ChatController {
 
     @GetMapping("/test")
     public String index() {
-        return "<h1>WELCOME CICD WORLD!</h1>";
+        return "<h1>똥머거!</h1>";
     }
 
     @PostMapping("/chat")
