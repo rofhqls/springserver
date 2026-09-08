@@ -5,7 +5,7 @@ WORKDIR /app
 # gradle wrapper 와 설정 파일 먼저 복사 (캐시 활용)
 COPY gradlew .
 COPY gradle gradle
-COPY build.gradle.settings.gradle ./
+COPY build.gradle settings.gradle ./
 
 # && 이후는 선택사항 - 추천
 RUN chmod +x gradlew && ./gradlew dependencies --no-daemon || return 0
@@ -20,6 +20,6 @@ RUN ./gradlew clean build -x test
 
 FROM eclipse-temurin:21-jre AS run
 WORKDIR /app
-COPY --from=build /app/build/libs/+SNAPSHOT.jar /app.jar
+COPY --from=build /app/build/libs/*SNAPSHOT.jar /app.jar
 EXPOSE 8070
 ENTRYPOINT ["java", "-jar", "/app.jar"]

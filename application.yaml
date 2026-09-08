@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: SpringServer
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mvc:
+    async:
+      request-timeout: 300000
+  datasource:
+    url: jdbc:mysql://43.201.28.68:3306/aifull
+    username: aiuser
+    password: adminuser
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+server:
+  port: 8070
