@@ -36,6 +36,10 @@ public class ChatController {
                 .build();
     }
 
+    @GetMapping("/test")
+    public String index() {
+        return "<h1>WELCOME CICD WORLD!</h1>";
+    }
 
     @PostMapping("/chat")
     public ResponseEntity<ResponseDto> chat(@RequestBody RequestDto req) {
